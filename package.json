@@ -1,0 +1,51 @@
+{
+  "name": "@sourcelocation/shasp",
+  "version": "0.1.0",
+  "description": "A brand compiler: design tokens (W3C DTCG) and exported artwork in, CSS, TypeScript, JSON, Swift, Kotlin and every platform's icons out.",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sourcelocation/shasp.git"
+  },
+  "type": "module",
+  "bin": {
+    "shasp": "./lib/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
+  "files": [
+    "lib",
+    "!lib/**/*.test.*"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepack": "pnpm build",
+    "test": "node --test 'src/**/*.test.ts'",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint --max-warnings 0 .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "26.6.4",
+    "eslint": "10.12.0",
+    "eslint-config-prettier": "10.1.8",
+    "globals": "17.13.0",
+    "jiti": "2.7.0",
+    "prettier": "3.9.9",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.0"
+  },
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=24"
+  }
+}

@@ -1,0 +1,5 @@
+# Written by tools.
+pnpm-lock.yaml
+lib/
+# Fixtures are the design tools' output, kept as exported.
+testdata/

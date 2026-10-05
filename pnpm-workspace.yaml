@@ -1,0 +1,4 @@
+# Dependencies' install scripts stay off. Exact versions keep the lockfile and package.json in step.
+allowBuilds:
+  esbuild: false
+savePrefix: ""
