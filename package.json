@@ -2,7 +2,7 @@
   "name": "@sourcelocation/shasp",
   "version": "0.1.0",
   "description": "A brand compiler: design tokens (W3C DTCG) and exported artwork in, CSS, TypeScript, JSON, Swift, Kotlin and every platform's icons out.",
-  "license": "AGPL-3.0-only",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sourcelocation/shasp.git"

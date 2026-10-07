@@ -70,4 +70,4 @@ Issues and pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). Co
 
 ## License
 
-shasp is free software under the [GNU Affero General Public License v3.0](LICENSE).
+shasp is released under the [MIT License](LICENSE).
