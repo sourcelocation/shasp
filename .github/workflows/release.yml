@@ -1,6 +1,5 @@
 name: Release
 
-# See sourcelocation/.github's AGENTS.md.
 on:
   push:
     branches: [master]
@@ -10,11 +9,21 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  release:
-    uses: sourcelocation/.github/.github/workflows/release.yml@main
+  release-please:
+    name: Release pull request
+    runs-on: ubuntu-latest
+    environment: release
     permissions:
       contents: write
       pull-requests: write
       issues: write
-      packages: write
-    secrets: inherit
+    steps:
+      # Not GITHUB_TOKEN: GitHub starts no CI for pull requests it opens.
+      - id: token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+      - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        with:
+          token: ${{ steps.token.outputs.token }}
